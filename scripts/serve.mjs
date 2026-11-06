@@ -8,11 +8,27 @@ const mime = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=u
 const port = Number(process.env.PORT || 4173);
 http.createServer(async (request, response) => {
   try {
-    const pathname = decodeURIComponent(new URL(request.url, 'http://localhost').pathname);
-    const file = path.resolve(root, `.${pathname === '/' ? '/index.html' : pathname}`);
-    if (!file.startsWith(root) || path.relative(root, file).startsWith('..')) { response.writeHead(403); response.end('Přístup odepřen.'); return; }
-    const content = await readFile(file);
-    response.writeHead(200, { 'Content-Type': mime[path.extname(file)] || 'application/octet-stream', 'Cache-Control': 'no-store' });
-    response.end(content);
-  } catch { response.writeHead(404); response.end('Stránka nenalezena.'); }
-}).listen(port, '127.0.0.1', () => console.log(`Hra běží na http://127.0.0.1:${port}`));
+    const url = new URL(request.url, 'http://localhost');
+    const pathname = decodeURIComponent(url.pathname);
+    const file = path.resolve(root, `.${pathname}`);
+    const relative = path.relative(root, file);
+    if (relative.startsWith('..') || path.isAbsolute(relative)) {
+      response.writeHead(403); response.end('Access denied.'); return;
+    }
+    // Match GitHub Pages: directory URLs resolve to their index.html.
+    if (pathname.endsWith('/')) {
+      const content = await readFile(path.join(file, 'index.html'));
+      response.writeHead(200, { 'Content-Type': mime['.html'], 'Cache-Control': 'no-store' });
+      response.end(content); return;
+    }
+    try {
+      const content = await readFile(file);
+      response.writeHead(200, { 'Content-Type': mime[path.extname(file)] || 'application/octet-stream', 'Cache-Control': 'no-store' });
+      response.end(content);
+    } catch {
+      await readFile(path.join(file, 'index.html'));
+      response.writeHead(301, { Location: `${url.pathname}/${url.search}` });
+      response.end();
+    }
+  } catch { response.writeHead(404); response.end('Page not found.'); }
+}).listen(port, '127.0.0.1', function () { console.log(`Games hub running at http://127.0.0.1:${this.address().port}`); });

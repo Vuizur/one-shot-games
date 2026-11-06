@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#121a18">
+  <meta name="description" content="Pod hladinou řeči. Literární hororová hra pro pokročilé znalce češtiny. Každé slovo má následky.">
+  <title>Pod hladinou řeči — česká textová adventura</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Přejít k příběhu</a>
+  <header class="masthead">
+    <a class="brand" href="./" aria-label="Pod hladinou řeči, úvod"><span class="brand-mark" aria-hidden="true">◈</span> POD HLADINOU ŘEČI</a>
+    <div class="masthead-right"><a class="hub-link" href="../../">← Všechny hry</a><span class="edition">JIŽNÍ ČECHY · 1927</span><button class="text-button" id="help-open">Jak hrát <span aria-hidden="true">↗</span></button></div>
+  </header>
+  <main id="main" tabindex="-1"></main>
+  <footer class="footer"><span>ARCHIV NEVYSLOVITELNÉHO</span><span>Původní příběh v duchu kosmického hororu.</span><span id="save-status">Slova mají následky.</span></footer>
+  <dialog id="help-dialog" aria-labelledby="help-title">
+    <div class="dialog-heading"><span class="eyebrow">POZNÁMKA PRO BADATELE</span><button id="help-close" class="icon-button" aria-label="Zavřít nápovědu">×</button></div>
+    <h2 id="help-title">Čtěte i mezi řádky.</h2>
+    <p>Jste filolog, který pátrá po zmizelém kolegovi. Čeká vás deset zkoušek: porozumění svědectví, práce s pády, slovesný vid i logika záporu. Vše potřebné k řešení je v příběhu.</p>
+    <p><strong>Rozvaha</strong> začíná na sedmi bodech. Chyba vás stojí jeden až dva body; při nule vaše výprava končí. Každou odpověď lze odevzdat jen jednou.</p>
+    <p><strong>Nápověda</strong> stojí jeden bod rozvahy a nezpřístupní se, pokud by vás její cena zlomila. Získané důkazy a výsledek posledního obřadu ovlivní závěr příběhu.</p>
+    <p>V psaných odpovědích záleží na diakritice. Velká písmena, mezery navíc a závěrečná tečka nerozhodují. Po vyhodnocení uvidíte vysvětlení i správné řešení.</p>
+    <p>Postup se automaticky ukládá v tomto prohlížeči, pokud povoluje místní úložiště. Žádné údaje se nikam neodesílají. Hra obsahuje znepokojivé motivy, ztrátu vlastní identity a smrt.</p>
+    <button class="primary" id="help-done">Rozumím</button>
+  </dialog>
+  <dialog id="restart-dialog" aria-labelledby="restart-title">
+    <span class="eyebrow">NOVÝ ZÁZNAM</span><h2 id="restart-title">Znovu otevřít dopis?</h2>
+    <p>Dosavadní postup bude nahrazen. Tentokrát možná rozeznáte, co vám prve uniklo.</p>
+    <div class="dialog-actions"><button class="secondary" id="restart-cancel">Zůstat v příběhu</button><button class="primary" id="restart-confirm">Začít znovu</button></div>
+  </dialog>
+</body>
+</html>

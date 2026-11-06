@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eee9da">
+  <meta name="description" content="Una aventura cómica de horror cósmico, café y burocracia. Cthulhu quiere acabar con el mundo. Tú necesitas una fotocopia.">
+  <title>Cthulhu tiene cita previa — aventura cósmico-administrativa</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al expediente</a>
+  <header class="masthead">
+    <a class="hub-link" href="../../">← Todas las aventuras</a>
+    <span class="header-office">AYUNTAMIENTO DE INNSMOUTH</span>
+    <button class="text-button" id="help-open">Cómo tramitar <span aria-hidden="true">↗</span></button>
+  </header>
+  <main id="main" tabindex="-1">
+    <p class="loading">Abriendo la ventanilla…</p>
+    <noscript><p>Esta aventura necesita JavaScript para tramitar el fin del mundo. Actívalo y recarga la página.</p></noscript>
+  </main>
+  <footer><span>NEGOCIADO DE ASUNTOS INNOMBRABLES</span><span id="save-status" role="status">Sin cita no hay apocalipsis.</span></footer>
+  <dialog id="help-dialog" aria-labelledby="help-title">
+    <div class="dialog-top"><span class="eyebrow">MANUAL DEL PERSONAL TEMPORAL</span><button class="close" id="help-close" aria-label="Cerrar ayuda">×</button></div>
+    <h2 id="help-title">No hace falta saber latín. Ni sobrevivir a una oposición.</h2>
+    <p>Lee el relato y elige una respuesta. Es una aventura en español, no un examen: no hay una única respuesta correcta.</p>
+    <p>Visita <strong>Urbanismo, Archivo y Cafetería</strong> en el orden que quieras. Reúne la licencia, el nombre verdadero y el café para desbloquear la audiencia final.</p>
+    <p>Las decisiones cambian tus objetos, tu <strong>paciencia</strong> y el <strong>caos</strong>. La paciencia va de 0 a 10; el caos también. Llegar a cero no te mata: solo te convierte en una persona que ha atendido al público.</p>
+    <p>Para negociar un buen acuerdo necesitas <strong>más de 2 de paciencia y menos de 5 de caos</strong>. Otras soluciones dependen de los objetos que consigas. Hay cinco finales; puedes volver a la audiencia para probar los que permita tu expediente, o empezar otra partida.</p>
+    <p>El avance se guarda en este navegador. No se envía ningún dato. Contiene humor negro suave, monstruos y gestión municipal. Esta última puede resultar especialmente inquietante.</p>
+    <button class="primary" id="help-done">Entendido. Más o menos.</button>
+  </dialog>
+  <dialog id="restart-dialog" aria-labelledby="restart-title">
+    <span class="eyebrow">DESTRUCCIÓN DE DOCUMENTACIÓN</span>
+    <h2 id="restart-title">¿Abrir otro expediente?</h2>
+    <p>Se borrará el avance de esta partida. Los finales descubiertos se conservan. Los errores de la Administración, también.</p>
+    <div class="dialog-actions"><button class="secondary" id="restart-cancel">Conservar el expediente</button><button class="primary" id="restart-confirm">Empezar de nuevo</button></div>
+  </dialog>
+</body>
+</html>

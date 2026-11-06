@@ -1,57 +1,54 @@
-# Pod hladinou řeči
+# One-Shot Games
 
-Česká textová adventura s původním příběhem v duchu lovecraftovského kosmického hororu. Deset jazykových zkoušek pro pokročilé, čtyři konce, rozvaha, důkazy, nápovědy a automatické ukládání do prohlížeče. Orientační obtížnost C1–C2, nikoli standardizovaný jazykový test.
+A growing collection of standalone browser games, served from one static hub on GitHub Pages. No build step, dependencies, backend, API keys, or external fonts are required.
 
-## Spuštění
+## Play locally
 
-Hra nevyžaduje sestavení ani instalaci závislostí. Ve Windows můžete ze složky hry spustit:
+Run `npm start`, `node scripts/serve.mjs`, or double-click `spustit-hru.cmd` on Windows. Open the printed address (normally http://127.0.0.1:4173). The home page lists all games.
 
-```powershell
-.\spustit-hru.cmd
-```
-
-Spouštěč vyhledá Node v PATH a poté zkusí běhové prostředí dodávané s aplikací Codex. Není nutné měnit systémové nastavení PATH. Pokud nemáte ani jednu možnost, můžete hru rovnou zveřejnit na GitHub Pages podle návodu níže.
-
-Máte-li Node.js 20 nebo novější a npm v PATH, můžete také použít:
-
-```sh
-npm start
-```
-
-Pokud nemáte k dispozici npm, spusťte přímo `node scripts/serve.mjs`. Ověření lze obdobně spustit příkazem `node --test`.
-
-V prohlížeči otevřete adresu, kterou příkaz vypíše (standardně `http://127.0.0.1:4173`). Kvůli modulům JavaScriptu otevírejte hru přes HTTP server, nikoli dvojklikem na soubor.
+Use an HTTP server rather than opening HTML files directly, because the adventure uses JavaScript modules.
 
 ## GitHub Pages
 
-1. Nahrajte obsah této složky do repozitáře na GitHubu, například do větve `main`. Soubor `index.html` musí být v kořeni repozitáře.
-2. V nastavení repozitáře otevřete **Settings → Pages**.
-3. V části **Build and deployment** zvolte **Deploy from a branch**, větev `main` a složku **/ (root)**. Potvrďte **Save**.
-4. Po dokončení nasazení otevřete adresu uvedenou v části Pages, obvykle `https://UZIVATEL.github.io/REPOZITAR/`.
+1. Push this folder's contents to your GitHub repository.
+2. Under **Settings → Pages**, choose **Deploy from a branch**, your publishing branch (for example `main`), and **/ (root)**.
+3. Open the URL shown by GitHub Pages after deployment.
 
-Všechny odkazy jsou relativní; hra funguje také v podadresáři projektových GitHub Pages. Soubor `.nojekyll` vypíná zpracování Jekyllem. Hra nepoužívá backend, klíče API, analytiku, externí písma ani síťové služby. Zveřejnění repozitáře nebo nasazení tato složka sama neprovádí.
+The root `index.html` is the hub. Each game lives at `games/<slug>/`. All site links are relative, so the collection works at both a domain root and a project URL such as `https://USER.github.io/REPOSITORY/`. Keep `.nojekyll` at the root.
 
-## Pravidla
+The existing repository name can stay the same; renaming the local folder does not change its GitHub URL. This change does not itself push or publish the repository.
 
-- Počáteční rozvaha: 7 bodů. Omyl stojí 1–2 body, nápověda 1 bod. Při nule pátrání končí.
-- Odpověď je možné odevzdat pouze jednou. Po vyhodnocení se zobrazí příběhový následek a jazykové vysvětlení.
-- Psané úlohy vyžadují diakritiku a přesný předepsaný tvar. Velikost písmen, mezery navíc, Unicode NFC/NFD a závěrečná interpunkce se sjednocují.
-- Stav včetně vyhodnocení a nápověd se ukládá místně. Obnovení stránky umožní pokračovat od posledního rozhodnutí. Rozpracovaná odpověď se neukládá.
-- Pokud prohlížeč úložiště blokuje, lze hrát bez ukládání. Hra tuto situaci oznámí v zápatí.
+## Current games
 
-<details>
-<summary>Pravidla závěrů — obsahuje vyzrazení děje</summary>
+| Game | Path | Details |
+| --- | --- | --- |
+| Pod hladinou řeči | [Play](games/pod-hladinou-reci/) | Czech cosmic horror text adventure, C1–C2, 10 puzzles, 4 endings |
+| Cthulhu tiene cita previa | [Play](games/cthulhu-tiene-cita-previa/) | Spanish cosmic comedy, three departments, 5 endings, 15–25 minutes |
+| Amor en modo subjuntivo | [Play](games/amor-en-modo-subjuntivo/) | Spanish dating comedy, 10 grammar challenges, 3 adult characters, 4 endings |
 
-Nulová rozvaha vždy vede ke ztrátě identity. Při kladné rozvaze a chybném závěrečném oslovení zůstane práh otevřený. Správné oslovení umožní vlastní záchranu; správně získaný jmenný rejstřík (3. zkouška), úplný překlad (7.) a listina se jménem (8.) navíc dovolí zachránit Rybáře. Ostatní důkazy se zapisují do zápisníku; správné odpovědi u nich také chrání rozvahu.
+See [the adventure's README](games/pod-hladinou-reci/README.md) for its rules and story notes. Saves retain the original storage key and survive this reorganization when served on the same origin. A different domain or browser has separate saves.
 
-</details>
+## Add a game
 
-## Úpravy a ověření
+1. Create `games/your-game/` with its own `index.html` and assets. Keep its scripts, styles, and asset links relative to that folder.
+2. Copy the `<article class="game-card">` in the root `index.html`, place it before the future-game comment, and update its title, artwork, description, facts, and **all three** game links. Update the count beside “The collection.”
+3. Include a `../../` link back to the hub in the new game. If it saves progress, give it a unique localStorage key, since games on the same origin share storage.
+4. Run `npm test`, preview both the hub and the new game with `npm start`, then push to the publishing branch.
 
-- `data.js`: příběh, zadání, řešení, vysvětlení a závěry.
-- `engine.js`: vyhodnocení, změny rozvahy, konce, kontrola uložených dat.
-- `app.js`: rozhraní, přístupnost a ukládání.
-- `style.css`: vzhled včetně responzivního rozložení.
-- `npm test`: průchod hrou, podmínky všech konců, nevratnost odpovědí a obnova uloženého stavu.
+The hub works without JavaScript. Use real links so visitors can bookmark games and open them in new tabs. Do not add unavailable games as playable cards.
 
-Řešení jsou součástí veřejného zdrojového kódu. Hra slouží k procvičování, nikoli k zabezpečenému zkoušení. Vymazání dat webu smaže postup; mezi různými prohlížeči či adresami se postup nepřenáší.
+## Project layout and checks
+
+- `index.html`, `hub.css`: collection page and its responsive styling.
+- `games/pod-hladinou-reci/`: the existing adventure, with self-contained assets.
+- `scripts/serve.mjs`: local static server, including directory index support.
+- `test/game.test.js`: adventure rules, endings, answer handling, and saved state.
+- `test/site.test.js`: hub/game links and static asset integrity.
+
+Run `npm test` or `node --test`. Each game's implementation and tests should remain independent of future games.
+
+The Spanish adventure has its own [README](games/cthulhu-tiene-cita-previa/README.md) and isolated save keys. Its tests live in test/spanish-game.test.js.
+
+[Amor en modo subjuntivo](games/amor-en-modo-subjuntivo/README.md) stores only decisions and outcomes, never typed answers. Its review notebook displays correct Spanish models only.
+
+[Poslední spoj do Včera](games/posledni-spoj/README.md) is a standalone Czech narrative mystery, with free exploration and four endings. It has no language exercises and can be hosted separately on GitHub Pages.

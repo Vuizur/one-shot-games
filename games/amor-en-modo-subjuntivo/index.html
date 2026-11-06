@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4eee7">
+  <meta name="description" content="Una comedia romántica con diez retos de gramática española, tres citas posibles y consecuencias deliciosamente absurdas.">
+  <title>Amor en modo subjuntivo — una cita con consecuencias</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Saltar a la cita</a>
+  <header><a href="../../">← Todas las aventuras</a><span class="brand">EL CLUB DE LAS CITAS IMPROBABLES</span><button id="help-open" class="text-button">Cómo jugar ↗</button></header>
+  <main id="main" tabindex="-1"><p class="loading">Preparando una mesa para dos…</p><noscript>Activa JavaScript para empezar la aventura.</noscript></main>
+  <footer><span>LA MEDIA CROQUETA · RESTAURANTE Y DAÑOS COLATERALES</span><span id="save-status" role="status">Aquí las tildes también tienen su encanto.</span></footer>
+  <dialog id="help" aria-labelledby="help-title">
+    <div class="dialog-top"><span class="eyebrow">ANTES DEL PRIMER MENSAJE</span><button id="help-close" class="close" aria-label="Cerrar ayuda">×</button></div>
+    <h2 id="help-title">El amor no es un examen. Esta cena tiene diez preguntas.</h2>
+    <p>Elige a una de las tres personas adultas, prepara el plan y responde a diez retos de gramática. A mitad de la cita podrás decidir cómo pasar el siguiente rato.</p>
+    <p>Escribe solo la forma o la oración que pide cada consigna. La comprobación es local y usa respuestas previstas: no corrige texto libre. Se aceptan las variantes indicadas, mayúsculas, espacios extra y puntuación final. Las tildes y la concordancia sí cuentan.</p>
+    <p>Puedes pedir una pista sin penalización. Cada reto admite un intento; después verás un modelo correcto y una explicación. Un error provoca una escena absurda, pero nunca termina la cena antes de tiempo.</p>
+    <p>No mostramos opciones con errores ni repetimos tus respuestas. Lo que escribas se descarta al enviarlo. El cuaderno conserva únicamente modelos correctos; el guardado conserva tus decisiones y si cada reto quedó resuelto.</p>
+    <p>Hay cuatro finales según los retos resueltos y la afinidad de vuestros planes. Ningún personaje te debe una relación: también puede terminar en una amistad o en una anécdota excelente.</p>
+    <button class="primary" id="help-done">Vamos a conocernos</button>
+  </dialog>
+  <dialog id="restart-dialog" aria-labelledby="restart-title">
+    <span class="eyebrow">OTRA OPORTUNIDAD</span><h2 id="restart-title">¿Reservamos otra mesa?</h2>
+    <p>Se sustituirá el avance de esta partida por una cita nueva.</p>
+    <div class="dialog-actions"><button class="secondary" id="restart-cancel">Seguir con esta cita</button><button class="primary" id="restart-confirm">Empezar de nuevo</button></div>
+  </dialog>
+</body>
+</html>

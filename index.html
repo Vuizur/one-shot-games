@@ -1,36 +1,152 @@
 <!doctype html>
-<html lang="cs">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#121a18">
-  <meta name="description" content="Pod hladinou řeči. Literární hororová hra pro pokročilé znalce češtiny. Každé slovo má následky.">
-  <title>Pod hladinou řeči — česká textová adventura</title>
-  <link rel="stylesheet" href="./style.css">
-  <script type="module" src="./app.js"></script>
+  <meta name="theme-color" content="#f3f0e7">
+  <meta name="description" content="A growing collection of small, standalone browser games. Pick a world and step inside.">
+  <title>One-Shot Games — small games, other worlds</title>
+  <link rel="stylesheet" href="./hub.css">
 </head>
 <body>
-  <a class="skip" href="#main">Přejít k příběhu</a>
+  <a class="skip" href="#games">Skip to games</a>
   <header class="masthead">
-    <a class="brand" href="./" aria-label="Pod hladinou řeči, úvod"><span class="brand-mark" aria-hidden="true">◈</span> POD HLADINOU ŘEČI</a>
-    <div class="masthead-right"><span class="edition">JIŽNÍ ČECHY · 1927</span><button class="text-button" id="help-open">Jak hrát <span aria-hidden="true">↗</span></button></div>
+    <a class="wordmark" href="./" aria-label="One-Shot Games home"><span class="logo" aria-hidden="true">1.</span> ONE-SHOT GAMES</a>
+    <a class="nav-link" href="#about">About the collection <span aria-hidden="true">↗</span></a>
   </header>
-  <main id="main" tabindex="-1"></main>
-  <footer class="footer"><span>ARCHIV NEVYSLOVITELNÉHO</span><span>Původní příběh v duchu kosmického hororu.</span><span id="save-status">Slova mají následky.</span></footer>
-  <dialog id="help-dialog" aria-labelledby="help-title">
-    <div class="dialog-heading"><span class="eyebrow">POZNÁMKA PRO BADATELE</span><button id="help-close" class="icon-button" aria-label="Zavřít nápovědu">×</button></div>
-    <h2 id="help-title">Čtěte i mezi řádky.</h2>
-    <p>Jste filolog, který pátrá po zmizelém kolegovi. Čeká vás deset zkoušek: porozumění svědectví, práce s pády, slovesný vid i logika záporu. Vše potřebné k řešení je v příběhu.</p>
-    <p><strong>Rozvaha</strong> začíná na sedmi bodech. Chyba vás stojí jeden až dva body; při nule vaše výprava končí. Každou odpověď lze odevzdat jen jednou.</p>
-    <p><strong>Nápověda</strong> stojí jeden bod rozvahy a nezpřístupní se, pokud by vás její cena zlomila. Získané důkazy a výsledek posledního obřadu ovlivní závěr příběhu.</p>
-    <p>V psaných odpovědích záleží na diakritice. Velká písmena, mezery navíc a závěrečná tečka nerozhodují. Po vyhodnocení uvidíte vysvětlení i správné řešení.</p>
-    <p>Postup se automaticky ukládá v tomto prohlížeči, pokud povoluje místní úložiště. Žádné údaje se nikam neodesílají. Hra obsahuje znepokojivé motivy, ztrátu vlastní identity a smrt.</p>
-    <button class="primary" id="help-done">Rozumím</button>
-  </dialog>
-  <dialog id="restart-dialog" aria-labelledby="restart-title">
-    <span class="eyebrow">NOVÝ ZÁZNAM</span><h2 id="restart-title">Znovu otevřít dopis?</h2>
-    <p>Dosavadní postup bude nahrazen. Tentokrát možná rozeznáte, co vám prve uniklo.</p>
-    <div class="dialog-actions"><button class="secondary" id="restart-cancel">Zůstat v příběhu</button><button class="primary" id="restart-confirm">Začít znovu</button></div>
-  </dialog>
+  <main>
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="intro-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> AN INDEPENDENT BROWSER GAME COLLECTION</p>
+        <h1 id="intro-title">Small games.<br><em>Other worlds.</em></h1>
+        <p class="intro-text">Little experiments. Strange adventures. A growing shelf of standalone games, ready to play in your browser.</p>
+        <a class="browse" href="#games">Find your next adventure <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="orbit" aria-hidden="true">
+        <span class="orbit-caption">TAKE A SHORT DETOUR</span>
+        <div class="orbit-ring ring-one"></div><div class="orbit-ring ring-two"></div>
+        <div class="orbit-planet"><span>PLAY</span><span>ANOTHER<br>WORLD.</span><b>↗</b></div>
+        <span class="orbit-star star-one">✳</span><span class="orbit-star star-two">+</span>
+        <span class="orbit-coordinate">NO DOWNLOAD REQUIRED</span>
+      </div>
+    </section>
+    <section id="games" class="library" aria-labelledby="library-title">
+      <div class="section-heading"><h2 id="library-title">The collection</h2><span class="eyebrow">04 GAMES / MORE TO COME</span></div>
+      <article class="game-card">
+        <a class="game-art" href="./games/pod-hladinou-reci/" tabindex="-1" aria-hidden="true">
+          <span class="art-label">JIŽNÍ ČECHY · 1927</span>
+          <svg viewBox="0 0 560 350" fill="none" aria-hidden="true">
+            <defs><pattern id="ripples" width="100" height="16" patternUnits="userSpaceOnUse"><path d="M0 8Q25 0 50 8T100 8" stroke="#aab792" stroke-opacity=".18"/></pattern></defs>
+            <circle cx="280" cy="141" r="105" stroke="#aab792" stroke-opacity=".2"/>
+            <circle cx="280" cy="141" r="94" stroke="#aab792" stroke-opacity=".12"/>
+            <circle cx="280" cy="141" r="66" fill="#c7caa4"/>
+            <circle cx="304" cy="123" r="64" fill="#18251f"/>
+            <path d="M280 22V10M280 270v-12M161 141h-12M411 141h-12" stroke="#aab792" stroke-opacity=".5"/>
+            <path d="M0 267L53 249l36 8 61-19 50 17 40-10 41 15 55-19 53 13 49-13 47 17 75-3v95H0Z" fill="#101c17"/>
+            <path d="M248 267v-62h64v62M259 205v-43l21-32 21 32v43M280 130v-21m-7 9h14M237 213l43-23 43 23" fill="#14211b" stroke="#839479"/>
+            <path d="M275 173h10v15h-10ZM272 267v-22a8 8 0 0116 0v22" stroke="#839479"/>
+            <path d="M0 269H560" stroke="#aab792" stroke-opacity=".6"/>
+            <path d="M0 275h560v75H0Z" fill="url(#ripples)"/>
+            <path d="M240 290h80m-65 16h50m-37 16h24" stroke="#aab792" stroke-opacity=".3"/>
+          </svg>
+          <span class="art-caption">POD HLADINOU ŘEČI <span>01</span></span>
+        </a>
+        <div class="game-copy">
+          <div class="tags"><span>TEXT ADVENTURE</span><span lang="cs">ČESKY · C1–C2</span></div>
+          <h3 lang="cs"><a href="./games/pod-hladinou-reci/">Pod hladinou řeči</a></h3>
+          <p>A missing colleague. A village with a secret. A language that opens doors best left closed. Follow a literary cosmic horror mystery where every word has consequences.</p>
+          <dl class="game-facts"><div><dt>Challenges</dt><dd>10 language puzzles</dd></div><div><dt>Possibilities</dt><dd>4 endings</dd></div></dl>
+          <a class="play-link" href="./games/pod-hladinou-reci/">Play the adventure <span aria-hidden="true">↗</span></a>
+          <p class="content-note">Advanced Czech · Disturbing themes, identity loss and death.</p>
+        </div>
+      </article>
+      <article class="game-card spanish-card">
+        <a class="game-art spanish-art" href="./games/cthulhu-tiene-cita-previa/" tabindex="-1" aria-hidden="true">
+          <span class="art-label">INNSMOUTH · PLEASE TAKE A NUMBER</span>
+          <svg viewBox="0 0 560 350" fill="none" aria-hidden="true">
+            <circle cx="280" cy="163" r="120" fill="#d4ddbd"/>
+            <path d="M221 134l-23-47 44 22m97 25 23-47-44 22" fill="#718268" stroke="#293d36" stroke-width="3"/>
+            <path d="M225 178c-15 20-13 47-32 38m54-34c-17 28-8 55-30 55m53-45c-18 17 2 66-22 70m51-74c-9 27 12 68-12 80m36-86c7 25 3 66 26 68m-17-72c15 10 14 50 42 44" stroke="#293d36" stroke-width="23" stroke-linecap="round"/>
+            <path d="M225 178c-15 20-13 47-32 38m54-34c-17 28-8 55-30 55m53-45c-18 17 2 66-22 70m51-74c-9 27 12 68-12 80m36-86c7 25 3 66 26 68m-17-72c15 10 14 50 42 44" stroke="#718268" stroke-width="17" stroke-linecap="round"/>
+            <path d="M220 175v-30c0-78 120-78 120 0v30c0 34-120 34-120 0Z" fill="#718268" stroke="#293d36" stroke-width="4"/>
+            <path d="M238 123h33v29h-33zM288 123h33v29h-33zM271 135h17" fill="#eee9da" stroke="#293d36" stroke-width="3"/>
+            <path d="M245 161h22m25 0h22M271 235l9-8 9 8-5 8 7 25-11 13-11-13 7-25z" fill="#a03e2d" stroke="#293d36" stroke-width="2"/>
+            <path d="M125 285h310v25H125z" fill="#bf9567" stroke="#293d36" stroke-width="3"/>
+            <rect x="163" y="268" width="91" height="17" fill="#eee9da" stroke="#293d36" stroke-width="2"/>
+            <path d="M351 259v25h26v-25zM377 264c17-2 17 17 0 15" fill="#eee9da" stroke="#293d36" stroke-width="2"/>
+            <path d="M361 251c-7-8 7-10 0-17" stroke="#718268" stroke-width="3"/>
+          </svg>
+          <span class="art-caption">APOCALYPSE: APPLICATION PENDING <span>02</span></span>
+        </a>
+        <div class="game-copy">
+          <div class="tags"><span>COMEDY TEXT ADVENTURE</span><span lang="es">EN ESPAÑOL</span></div>
+          <h3 lang="es"><a href="./games/cthulhu-tiene-cita-previa/">Cthulhu tiene cita previa</a></h3>
+          <p>Cthulhu wants to end the world. You need a photocopy. Survive your first day at Innsmouth town hall with cosmic coffee, unionized cultists, and extremely questionable paperwork.</p>
+          <dl class="game-facts"><div><dt>Playtime</dt><dd>15–25 minutes</dd></div><div><dt>Possibilities</dt><dd>5 endings</dd></div></dl>
+          <a class="play-link" href="./games/cthulhu-tiene-cita-previa/">Take a number <span aria-hidden="true">↗</span></a>
+          <p class="content-note">Spanish · Cosmic absurdity, mild dark humor, and municipal administration.</p>
+        </div>
+      </article>
+      <article class="game-card dating-card" lang="es">
+        <a class="game-art dating-art" href="./games/amor-en-modo-subjuntivo/" tabindex="-1" aria-hidden="true">
+          <span class="art-label">LA MEDIA CROQUETA · MESA PARA DOS</span>
+          <svg viewBox="0 0 560 350" fill="none" aria-hidden="true">
+            <path d="M151 47h258v258H151z" fill="#e5cfcd" transform="rotate(-8 280 176)"/>
+            <circle cx="280" cy="176" r="116" fill="#fcf8f1" stroke="#b9aba6" stroke-width="2"/>
+            <circle cx="280" cy="176" r="92" stroke="#b9aba6" stroke-dasharray="3 8"/>
+            <path d="M280 227c-90-48-67-122-23-99 12 6 23 21 23 21s11-15 23-21c44-23 68 51-23 99Z" fill="#a44d65"/>
+            <path d="M143 103v52m-10-52v34c0 18 20 18 20 0v-34m-10 54v95M420 103v149m0-149c-26 32-23 57 0 57" stroke="#53685b" stroke-width="5" stroke-linecap="round"/>
+            <path d="M270 171q12-14 24-1m-26 23q14 11 26-1" stroke="#fcf8f1" stroke-width="3" stroke-linecap="round"/>
+            <path d="M360 50l5-13 5 13 13 5-13 5-5 13-5-13-13-5Z" fill="#53685b"/>
+          </svg>
+          <span class="art-caption">EL FLECHAZO NO LLEVA TILDE. LA CATÁSTROFE, SÍ. <span>03</span></span>
+        </a>
+        <div class="game-copy">
+          <div class="tags"><span>COMEDIA DE CITAS</span><span>GRAMÁTICA EN ESPAÑOL</span></div>
+          <h3><a href="./games/amor-en-modo-subjuntivo/">Amor en modo subjuntivo</a></h3>
+          <p>Tres citas posibles, diez retos de español y un restaurante que convierte cada tropiezo en un desastre espectacular. Escribe tus respuestas, conoce a tu cita y esquiva los planes sentimentales de la tostadora.</p>
+          <dl class="game-facts"><div><dt>Tu reto</dt><dd>10 pruebas de gramática</dd></div><div><dt>Posibilidades</dt><dd>3 personajes · 4 finales</dd></div></dl>
+          <a class="play-link" href="./games/amor-en-modo-subjuntivo/">Reservar una cita <span aria-hidden="true">↗</span></a>
+          <p class="content-note">Solo modelos correctos · Las respuestas escritas no se guardan ni se repiten.</p>
+        </div>
+      </article>
+      <article class="game-card train-card" lang="cs">
+        <a class="game-art train-card-art" href="./games/posledni-spoj/" tabindex="-1" aria-hidden="true">
+          <span class="art-label">MIMOŘÁDNÝ SPOJ · ODJEZD 00:37</span>
+          <svg viewBox="0 0 560 350" fill="none" aria-hidden="true">
+            <circle cx="328" cy="125" r="89" stroke="#9aab98" stroke-opacity=".15"/>
+            <circle cx="328" cy="125" r="48" fill="#d3d3af"/><circle cx="344" cy="111" r="47" fill="#182230"/>
+            <path d="M0 240l50-38 25 11 35-52 28 63 41-35 42 30 23-46 32 38 37-58 30 73 44-37 25 13 31-36 52 51 40-16v149H0Z" fill="#111b27"/>
+            <path d="M40 287h480m-480 8h480" stroke="#667b78" stroke-width="2"/>
+            <path d="M87 217q0-14 15-14h309q23 0 25 17l7 52H87Z" fill="#354e46" stroke="#83988a" stroke-width="1.5"/>
+            <path d="M91 236h337v9H91Z" fill="#c6aa79" fill-opacity=".25"/>
+            <path d="M112 214h28v27h-28zm47 0h28v27h-28zm47 0h28v27h-28zm47 0h28v27h-28zm47 0h28v27h-28zm47 0h28v27h-28Z" fill="#e9c68d" fill-opacity=".8"/>
+            <path d="M391 214h24l9 49h-33Z" fill="#182a2b" stroke="#879a86"/>
+            <path d="M398 221h12l4 18h-16Z" fill="#e9c68d" fill-opacity=".7"/>
+            <path d="M95 274h340" stroke="#172329" stroke-width="6"/>
+            <circle cx="135" cy="278" r="9" fill="#101821" stroke="#6d7e74"/><circle cx="158" cy="278" r="9" fill="#101821" stroke="#6d7e74"/>
+            <circle cx="373" cy="278" r="9" fill="#101821" stroke="#6d7e74"/><circle cx="396" cy="278" r="9" fill="#101821" stroke="#6d7e74"/>
+            <circle cx="436" cy="253" r="3" fill="#f3d89e"/>
+          </svg>
+          <span class="art-caption">POSLEDNÍ SPOJ DO VČERA <span>04</span></span>
+        </a>
+        <div class="game-copy">
+          <div class="tags"><span>PŘÍBĚHOVÁ HRA</span><span>ČESKY · BEZ ZKOUŠENÍ</span></div>
+          <h3><a href="./games/posledni-spoj/">Poslední spoj do Včera</a></h3>
+          <p>Na nádraží zastaví vlak do dne, který bys raději prožil jinak. Projdi noční vozy, poznej tři cestující a rozhodni, jestli chceš minulost opravit, nebo konečně odjet někam dál.</p>
+          <dl class="game-facts"><div><dt>Jedna cesta</dt><dd>20–30 minut</dd></div><div><dt>Kam dojedeš</dt><dd>4 různé konce</dd></div></dl>
+          <a class="play-link" href="./games/posledni-spoj/">Nastoupit <span aria-hidden="true">↗</span></a>
+          <p class="content-note">Noční záhada, tichý humor a cizí vzpomínky. Samostatný příběh bez jazykových úloh.</p>
+        </div>
+      </article>
+      <!-- Add future game cards here. See README.md for the folder and link conventions. -->
+      <div class="shelf-note"><span aria-hidden="true">+</span><p>There’s room on this shelf.<br><span>New games will appear here as the collection grows.</span></p></div>
+    </section>
+    <section id="about" class="about" aria-labelledby="about-title">
+      <p class="eyebrow">ONE COLLECTION, MANY DIRECTIONS</p>
+      <div><h2 id="about-title">A place for the next idea.</h2><p>Each game is its own little world, made as a standalone coding experiment. Different stories, different mechanics, one place to find them all.</p><p>Play directly in your browser. Each adventure saves your progress on this device, so you can return when you’re ready.</p></div>
+    </section>
+  </main>
+  <footer><span>ONE-SHOT GAMES</span><span>Made for curiosity. Played in your browser.</span><a href="#intro-title">Back to top ↑</a></footer>
 </body>
 </html>

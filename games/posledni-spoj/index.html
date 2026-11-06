@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151d2b">
+  <meta name="description" content="Příběhová hra o nočním vlaku, cizích vzpomínkách a dni, který ještě nenastal. Čtyři konce. Žádné jazykové testy.">
+  <title>Poslední spoj do Včera — příběh mezi stanicemi</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Přejít k příběhu</a>
+  <header><a class="hub-link" href="../../">← Všechny hry</a><span class="brand"><span aria-hidden="true">◈</span> NOČNÍ LINKA 00:37</span><button class="text-button" id="help-open">Než nastoupíte ↗</button></header>
+  <main id="main" tabindex="-1"><p class="loading">Spoj přijíždí k nástupišti…</p><noscript>Pro spuštění příběhu povolte JavaScript a obnovte stránku.</noscript></main>
+  <footer><span>JÍZDENKA PLATÍ I BEZ JISTOTY</span><span id="save-status" role="status">Některé cesty začínají až po posledním spoji.</span></footer>
+  <dialog id="help-dialog" aria-labelledby="help-title">
+    <div class="dialog-heading"><span class="eyebrow">INFORMACE PRO CESTUJÍCÍ</span><button class="close" id="help-close" aria-label="Zavřít informace">×</button></div>
+    <h2 id="help-title">Není kam spěchat.</h2>
+    <p>Čtěte příběh a vybírejte, co uděláte. Hra je celá v češtině. Neobsahuje jazykové testy, časový limit ani boj.</p>
+    <p>Ve vlaku můžete navštívit tři kupé a bufet v libovolném pořadí. Po návštěvě dvou kupé lze pokračovat k dopisu. Když tak učiníte, do vozů už se nevrátíte.</p>
+    <p>Předměty otevírají další možnosti. U zamčené volby uvidíte, co chybí. Tři zakončení jsou dostupná vždy; čtvrté vyžaduje nedokončenou melodii, klíč, semínko a přiznanou vzpomínku.</p>
+    <p>Volby se ukládají v tomto prohlížeči. Na konci se můžete vrátit před poslední rozhodnutí nebo začít jinak. Poznámky v postranním panelu připomenou, co jste zjistili.</p>
+    <p>Příběh obsahuje lítost, odcizení v rodině a zmínku o ztrátě blízkého člověka. Nemá lekací scény. Přibližná délka jedné cesty je 20–30 minut.</p>
+    <button class="primary" id="help-done">Rozumím. Nechte mi místo u okna.</button>
+  </dialog>
+  <dialog id="restart-dialog" aria-labelledby="restart-title"><span class="eyebrow">NOVÁ JÍZDENKA</span><h2 id="restart-title">Znovu na nástupiště?</h2><p>Dosavadní cesta se přepíše. Tentokrát si můžete sednout do jiného kupé.</p><div class="dialog-actions"><button class="secondary" id="restart-cancel">Ještě nevystupovat</button><button class="primary" id="restart-confirm">Začít znovu</button></div></dialog>
+</body>
+</html>

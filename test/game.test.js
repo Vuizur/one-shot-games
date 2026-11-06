@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { chapters } from '../data.js';
-import { newGame, submitAnswer, advance, useHint, endingFor, validateSave, isCorrect } from '../engine.js';
+import { chapters } from '../games/pod-hladinou-reci/data.js';
+import { newGame, submitAnswer, advance, useHint, endingFor, validateSave, isCorrect } from '../games/pod-hladinou-reci/engine.js';
 
 function answerFor(chapter, correct) {
   if (correct) return chapter.type === 'input' ? chapter.answer[0] : chapter.answer;
